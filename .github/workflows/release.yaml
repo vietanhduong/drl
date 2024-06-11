@@ -1,4 +1,5 @@
 name: Release
+run-name: Release ${{ github.ref }}
 
 on:
   push:
@@ -30,3 +31,5 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
