@@ -1,0 +1,44 @@
+{
+  "owner1/repo1/v0.1.0": {
+    "id": 1,
+    "tag_name": "v0.1.0",
+    "assets": [
+      {
+        "id": 1,
+        "name": "example.zip"
+      },
+      {
+        "id": 2,
+        "name": "example.tar.gz"
+      }
+    ]
+  },
+  "owner1/repo1/latest": {
+    "id": 1,
+    "tag_name": "v0.1.0",
+    "assets": [
+      {
+        "id": 1,
+        "name": "example.zip"
+      },
+      {
+        "id": 2,
+        "name": "example.tar.gz"
+      }
+    ]
+  },
+  "owner1/repo2/v0.1.1": {
+    "id": 1,
+    "tag_name": "v0.1.1",
+    "assets": [
+      {
+        "id": 3,
+        "name": "example.zip"
+      },
+      {
+        "id": 4,
+        "name": "example.tar.gz"
+      }
+    ]
+  }
+}
