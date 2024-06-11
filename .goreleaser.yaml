@@ -1,0 +1,50 @@
+project_name: drl
+
+version: 2
+
+builds:
+  - binary: drl
+    main: ./cmd
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - >
+        -s -w
+        -X github.com/vietanhduong/drl/pkg/config.version={{.Tag}}
+          -X github.com/vietanhduong/drl/pkg/config.gitCommit={{.Commit}}
+          -X github.com/vietanhduong/drl/pkg/config.buildDate={{.Date}}
+          -X github.com/vietanhduong/drl/pkg/config.arch={{.Arch}}
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm
+      - arm64
+
+changelog:
+  use: git
+  groups:
+    - title: Features
+      regexp: "^.*feat[(\\w)]*:+.*$"
+      order: 0
+    - title: "Bug fixes"
+      regexp: "^.*fix[(\\w)]*:+.*$"
+      order: 1
+    - title: Others
+      order: 999
+
+release:
+  name_template: "{{.Tag}}"
+
+archives:
+  - files:
+      - LICENSE
+      - README.md
+    format: binary
+
+checksum:
+  name_template: "checksums.txt"
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
