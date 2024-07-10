@@ -5,6 +5,13 @@ Download GitHub releases from the command line. This also supports private repos
 ```console
 $ drl --help
 Download a release asset from GitHub
+Notes:
+  * The ASSET URL should be in 3 formats:
+    - REPO_OWNER/REPO_NAME/[Tag]/FILE_NAME => The [Tag] is optional, if not specified will be treated as "latest"
+    - github.com/REPO_OWNER/REPO_NAME/releases/download/[Tag]/FILE_NAME
+    - github.com/REPO_OWNER/REPO_NAME/releases/latest/download/FILE_NAME
+
+  * Currently, this tool only supports hosting on GitHub. Enterprise GitHub is not supported yet.
 
 Usage:
   drl REPO_OWNER/REPO_NAME/[Tag]/FILE_NAME [--github.token PAT] [--output FILE] [flags]
